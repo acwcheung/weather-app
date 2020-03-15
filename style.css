@@ -4,8 +4,7 @@ html *:before,
 html *:after { box-sizing: inherit; }
 
 body {
-  background-size: cover;
-  background-repeat: no-repeat;
+
 }
 
 /****************/
@@ -15,7 +14,7 @@ form {
   padding: 30px 60px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 svg {
@@ -54,9 +53,16 @@ button {
 /* weather info */
 /****************/
 .wrapper {
+  max-width: 500px;
+  height: 90vh;
+  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.weather-background {
   background-color: rgba(0,0,0,0.5);
   position: relative;
-  margin-left: 50px;
+  margin: auto;
   width: 300px;
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -70,25 +76,36 @@ button {
   font-weight: 800;
   padding: 10px; 
 }
+.temp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 .main-temp {
   font-size: 45px;
   text-align: right;
   margin: 0 0 15px 0;
 }
+h3 {
+  margin: 10px;
+}
+.separator {
+  background-color: #fff;
+  width: 70px;
+  height: 3px;
+}
 .secondary-data {
+  margin-top: 20px;
   display: flex;
+  justify-content: space-around;
+  font-size: 20px;
 }
-.others {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-right: 20px;
+.feels-like .far,
+.humidity .fas,
+.wind .fas {
+  margin-right: 10px;
 }
-.temp {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
+
 
 /*****************/
 /* weather icons */

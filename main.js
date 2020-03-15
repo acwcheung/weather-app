@@ -46,6 +46,7 @@ const rainy = `
 	  <div class="rain"></div>
 	</div>
 	`
+const wrapper = document.querySelector('.wrapper');
 const weatherContainer = document.querySelector('.weather-container');
 const submitButton = document.querySelector('.submit');
 const key = "f535debb98ce44971795e7d37e1f37e2";
@@ -107,7 +108,7 @@ function backgroundImage(weather) {
 	} else {
 		image = "cloudy.jpg";
 	};
-	document.body.style.backgroundImage = `url(${image})`;
+	wrapper.style.backgroundImage = `url(${image})`;
 }
 
 function display(info) {
@@ -118,17 +119,18 @@ function display(info) {
 	  	<div class="name">${name}</div>
 		<div class="date">${getDate()}</div>
 		<div class="description">${handleIcon(description)}</div>
-		<h3 class="main-temp">${main.temp}°C</h3>
+		<div class="temp">
+			<div class="main-temp">${main.temp.toFixed(1)}°C</div>							
+			<div>
+				<h3 class="max">${main.temp_max.toFixed(1)}°C</h3>				
+				<div class="separator"></div>
+				<h3 class="min">${main.temp_min.toFixed(1)}°C</h3>				
+			</div>
+		</div>
 		<div class="secondary-data">
-			<div class="others">	
-				<div class="humidity">humidity: ${main.humidity}</div>
-				<div class="wind">wind: ${wind.speed}</div>
-			</div>
-			<div class="temp">
-				<div class="feels-like">feels like: ${main.feels_like}°C</div>
-				<div class="min">min: ${main.temp_min}°C</div>
-				<div class="max">max: ${main.temp_max}°C</div>
-			</div>
+			<div class="feels-like"><i class="far fa-user"></i>${main.feels_like.toFixed(1)}°C</div>	
+			<div class="humidity"><i class="fas fa-tint"></i>${main.humidity}</div>
+			<div class="wind"><i class="fas fa-wind"></i>${wind.speed}</div>			
 		</div>		
 	  	`
 }
