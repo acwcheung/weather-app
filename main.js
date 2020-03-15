@@ -128,9 +128,18 @@ function display(info) {
 			</div>
 		</div>
 		<div class="secondary-data">
-			<div class="feels-like"><i class="far fa-user"></i>${main.feels_like.toFixed(1)}°C</div>	
-			<div class="humidity"><i class="fas fa-tint"></i>${main.humidity}</div>
-			<div class="wind"><i class="fas fa-wind"></i>${wind.speed}</div>			
+			<div class="feels-like">
+				<div class="sm-icon"><i class="far fa-user"></i></div>
+				<div>${main.feels_like.toFixed(1)}°C</div>
+			</div>	
+			<div class="humidity">
+				<div class="sm-icon"><i class="fas fa-tint"></i></div>
+				<div>${main.humidity}</div>
+			</div>
+			<div class="wind">
+				<div class="sm-icon"><i class="fas fa-wind"></i></div>
+				<div>${wind.speed}</div>
+			</div>			
 		</div>		
 	  	`
 }
